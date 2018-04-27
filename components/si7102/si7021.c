@@ -25,7 +25,7 @@ int si7021_init(i2c_port_t port, int sda_pin, int scl_pin,  gpio_pullup_t sda_in
 	conf.scl_pullup_en = scl_internal_pullup;
 	conf.master.clk_speed = 100000;
 	ret = i2c_param_config(port, &conf);
-	if(ret != ESP_OK) return SI7021_ERR_CONFIG;
+	if( ret != ESP_OK ) return SI7021_ERR_CONFIG;
 
 	// install the driver
 	ret = i2c_driver_install(port, I2C_MODE_MASTER, 0, 0, 0);
